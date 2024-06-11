@@ -1,0 +1,1 @@
+export const FETCH_TAB_NAME = 'tab/fetchTabName';
