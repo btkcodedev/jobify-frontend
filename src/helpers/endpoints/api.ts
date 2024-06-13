@@ -1,6 +1,6 @@
 import { API_BASE_PATH } from "src/config";
 import { ApiRequestPayload, TokenType } from "src/types";
-import { localHardRedirect, parseJSON, redirectOnNewVersion } from "src/helpers";
+import { localHardRedirect, parseJSON, redirectOnNewVersion } from "src/helpers/utils";
 import {
     clearAuthCookies,
     getApiVersion,

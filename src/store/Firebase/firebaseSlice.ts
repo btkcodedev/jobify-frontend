@@ -1,13 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Jobs, FirebaseResponseInterface, Company } from 'src/types';
 
 interface FirebaseState {
-  data: any[];
+  data: FirebaseResponseInterface;
   loading: boolean;
   error: string | null;
 }
 
 const initialState: FirebaseState = {
-  data: [],
+  data: {joblist: [], companiesList: []},
   loading: false,
   error: null,
 };
@@ -16,9 +17,23 @@ const firebaseSlice = createSlice({
   name: 'firebase',
   initialState,
   reducers: {
-    fetchDataSuccess(state, action: PayloadAction<any[]>) {
+    fetchCompanies(state) {
+      state.loading = true;
+    },
+    fetchCompaniesSuccess(state, action: PayloadAction<Company[]>){
       state.loading = false;
-      state.data = action.payload;
+      state.data.companiesList = action.payload;
+    },
+    fetchCompaniesFailure(state, action: PayloadAction<string>) {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    fetchData(state) {
+      state.loading = true;
+    },
+    fetchDataSuccess(state, action: PayloadAction<Jobs[]>) {
+      state.loading = false;
+      state.data.joblist = action.payload;
     },
     fetchDataFailure(state, action: PayloadAction<string>) {
       state.loading = false;
@@ -27,6 +42,6 @@ const firebaseSlice = createSlice({
   },
 });
 
-export const { fetchDataSuccess, fetchDataFailure } =
+export const { fetchCompanies, fetchData, fetchDataSuccess, fetchDataFailure, fetchCompaniesFailure, fetchCompaniesSuccess } =
   firebaseSlice.actions;
 export default firebaseSlice.reducer;

@@ -2,7 +2,7 @@ import {
     getCookie,
     removeCookie,
     setCookie,
-} from "src/helpers";
+} from "src/helpers/utils";
 import { TokenType } from "src/types";
 
 const IS_LOGGED_IN = "isLoggedIn";
@@ -82,12 +82,3 @@ export const getHeaderDetails = () => {
     return { username, avatar };
 };
 
-// Function which returns employee id from cookies
-export const getEmpId = () => {
-    return getCookie(EMP_ID) || "";
-};
-
-// Function which returns whether user is admin
-export const checkAdminUser = () => {
-    return getCookie(IS_ADMIN) == "true";
-};
