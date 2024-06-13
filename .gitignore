@@ -12,6 +12,7 @@ modern.jsonp
 resources/sass/.sass-cache/
 resources/.arch-internal-preview.css
 .arch-internal-preview.css
-secrets/
 node_modules/
 dist/
+.firebase
+.env
