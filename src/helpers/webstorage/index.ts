@@ -82,3 +82,6 @@ export const getHeaderDetails = () => {
     return { username, avatar };
 };
 
+export const checkAdminUser = () => {
+    return getCookie(IS_ADMIN) ? true: false;
+}
