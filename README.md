@@ -1,7 +1,7 @@
 # Jobify - Frontend
 
 Single location for job search with recently scraped data from career sites
-(Please consider giving a star, it scrapes and updates recent postings)
+(Please consider giving a star, it scrapes and updates recent postings every day)
 
 ## View production
  - https://knowjobify.web.app/
