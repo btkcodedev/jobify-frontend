@@ -110,10 +110,10 @@ export default function TableTextEllipsis() {
                               </Box>
                             </TableCell>
                             <TableCell>
-                              {item.createdAt}
+                              {CapitalizeFirsLetter(item.company)}
                             </TableCell>
                             <TableCell>
-                              {CapitalizeFirsLetter(item.company)}
+                              {item.createdAt}
                             </TableCell>
                             <TableCell>
                               <Link href={item.url}>{item.url}</Link>
