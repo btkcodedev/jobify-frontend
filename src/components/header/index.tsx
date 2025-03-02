@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Box, Sheet, Typography } from '@mui/joy';
 import { Clock } from 'lucide-react';
 
+const currentLocale = navigator.language; 
+
 export default function Header() {
   const [currentTime, setCurrentTime] = React.useState<string>("")
 
@@ -16,7 +18,7 @@ export default function Header() {
   const updateTime = () => {
     const now = new Date();
 
-    const formattedTime = now.toLocaleString("en-US", {
+    const formattedTime = now.toLocaleString(currentLocale, {
       month: "2-digit",
       day: "2-digit",
       year: "numeric",
