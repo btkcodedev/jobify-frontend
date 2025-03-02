@@ -17,6 +17,7 @@ import {
   FETCH_DATA_REQUEST,
 } from 'src/store/Firebase/constants';
 import { CapitalizeFirsLetter } from 'src/helpers/utils';
+import Header from 'src/components/header';
 
 export default function TableTextEllipsis() {
   const { joblist, companiesList } = useSelector(
@@ -56,8 +57,10 @@ export default function TableTextEllipsis() {
         marginTop: '15px',
         marginLeft: '10%',
         marginRight: '10%',
+        gap: 1,
       }}
     >
+      <Header/>
       <TabsBasic name={companiesList}>
         <Box
           sx={{
