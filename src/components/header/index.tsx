@@ -1,18 +1,18 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Sheet, Typography } from '@mui/joy';
 import { Clock } from 'lucide-react';
 
-const currentLocale = navigator.language; 
+const currentLocale = navigator.language;
 
 export default function Header() {
-  const [currentTime, setCurrentTime] = React.useState<string>("")
+  const [currentTime, setCurrentTime] = useState<string>("");
 
-  React.useEffect(() => {
-    updateTime()
+  useEffect(() => {
+    updateTime();
 
-    const interval = setInterval(updateTime, 1000)
+    const interval = setInterval(updateTime, 1000);
 
-    return () => clearInterval(interval)
+    return () => clearInterval(interval);
   }, [])
 
   const updateTime = () => {
@@ -26,8 +26,8 @@ export default function Header() {
       minute: "2-digit",
       second: "2-digit",
       hour12: true,
-    })
-    setCurrentTime(formattedTime)
+    });
+    setCurrentTime(formattedTime);
   };
 
   return (
@@ -56,7 +56,6 @@ export default function Header() {
           </Typography>
         </Box>
       </Box>
-
     </Sheet>
   );
 }
